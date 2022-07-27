@@ -7,8 +7,8 @@ export const requestFootballAPI = createApi({
   }),
   endpoints: (builder) => ({
     getMatch: builder.query({
-      query: ({ date }) => ({
-        url: `soccer/matches?apikey=${process.env.API_KEY}&season_id=3009&date_from=${date}&date_to${date}`,
+      query: () => ({
+        url: `soccer/matches?apikey=${process.env.API_KEY}&season_id=3009`,
       }),
     }),
     getMatchById: builder.query({
