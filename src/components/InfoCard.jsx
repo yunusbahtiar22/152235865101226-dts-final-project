@@ -5,14 +5,14 @@ import { FaStar } from "react-icons/fa";
 
 dayjs.extend(localizeFormat);
 
-const FixtureSection = ({ data }) => {
+const InfoCard = ({ data }) => {
   return (
     <div className="flex bg-[rgba(225,225,225,0.05)] h-min-[70px] mt-3 w-[99%] mx-auto rounded-md cursor-pointer">
       <div className="w-1/6 text-white p-2 flex justify-center items-center">
         <span className="font-semibold">
           {data?.status === "finished"
             ? "FT"
-            : dayjs(data?.match_start).format("LLL")}
+            : dayjs(data?.match_start).format("lll")}
         </span>
       </div>
       <div className="px-5 w-5/6">
@@ -42,12 +42,12 @@ const FixtureSection = ({ data }) => {
         </div>
       </div>
       <div className="w-1/6 p-1 text-white">
-        <div className="py-2">
+        <div className="py-2 text-right">
           <span className="font-bold text-lg">
             {data?.stats?.ft_score?.split("")[0] | 0}
           </span>
         </div>
-        <div className="py-2">
+        <div className="py-2 text-right">
           <span className="font-bold text-lg">
             {data?.stats?.ft_score?.split("")[2] | 0}
           </span>
@@ -62,4 +62,4 @@ const FixtureSection = ({ data }) => {
   );
 };
 
-export default FixtureSection;
+export default InfoCard;
