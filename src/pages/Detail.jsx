@@ -10,11 +10,6 @@ const Detail = () => {
   const { matchId: id } = useParams();
   const { data: match } = useGetMatchByIdQuery({ id });
 
-  const status = {
-    3: "Full Time",
-    17: `${dayjs(match?.data?.match_start).format("ll")}`,
-  };
-
   const activeStyle = {
     "border-bottom": "3px solid white",
   };
