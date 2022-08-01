@@ -3,10 +3,19 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { useDispatch } from "react-redux";
 import { search } from "../reducers/soccerDataSlice";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useDispatch();
+
+  const handleSearch = (e) => {
+    dispatch(search(e.target.value));
+  };
+
+  const activeStyle = {
+    "border-bottom": "3px solid white",
+  };
+
   return (
     <>
       <header>
@@ -14,23 +23,29 @@ const Home = () => {
       </header>
       <main className="min-h-screen">
         <section className="w-3/6 bg-[#181818] mx-auto my-2">
-          <div className="flex justify-end items-center">
-            <Link to="fixture">
-              <span className="mx-2 text-xl font-semibold text-white p-2 bg-orange-500 rounded-md">
-                Fixture
-              </span>
-            </Link>
-            <Link to="result">
-              <span className="mx-2 text-xl font-semibold text-white mr-3 p-2 bg-orange-500 rounded-md">
-                Result
-              </span>
-            </Link>
+          <div className="flex justify-between items-center">
+            <div>
+              <NavLink
+                to="fixture"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}>
+                <span className="text-white font-semibold text-xl mx-5">
+                  Fixture
+                </span>
+              </NavLink>
+              <NavLink
+                to="result"
+                style={({ isActive }) => (isActive ? activeStyle : undefined)}>
+                <span className="text-white font-semibold text-xl mx-5">
+                  Results
+                </span>
+              </NavLink>
+            </div>
             <div>
               <input
                 className="rounded-md leading-4 p-2 focus:ring-4 focus:ring-orange-500 focus:outline-none"
                 type="text"
                 placeholder="Search..."
-                onChange={(e) => dispatch(search(e.target.value))}
+                onChange={handleSearch}
               />
             </div>
           </div>

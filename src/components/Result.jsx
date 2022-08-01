@@ -3,16 +3,19 @@ import InfoCard from "../components/InfoCard";
 import { useSelector } from "react-redux";
 import { selectTxtFilter } from "../reducers/soccerDataSlice";
 
-const dateFormat = "YYYY-MM-DD";
-
 const Fixture = () => {
   const txtFilter = useSelector(selectTxtFilter);
   const { data: results } = useGetFinishedMatchesQuery();
   return (
     <section className="w-3/6 bg-[#181818] mx-auto my-4 rounded-md border border-gray-500 h-min">
-      <h3 className="text-white font-bold ml-2 text-xl p-2">Result</h3>
+      <h3 className="text-white font-bold ml-2 text-xl p-2">Results</h3>
       {results?.data
-        .filter((result) => result?.status_code === 3)
+        .filter(
+          (result) =>
+            result.status_code === 3 ||
+            result.status_code === 31 ||
+            result.status_code === 32
+        )
         .filter((result) => {
           if (!txtFilter) return true;
           return (
@@ -26,7 +29,11 @@ const Fixture = () => {
         })
         .map((result) => {
           return <InfoCard data={result} key={result?.match_id} />;
-        })}
+        }) || (
+        <span className="text-white text-lg inline-block mx-auto p-4">
+          No record found
+        </span>
+      )}
     </section>
   );
 };

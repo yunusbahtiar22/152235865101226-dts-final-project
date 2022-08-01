@@ -35,6 +35,11 @@ export const requestFootballAPI = createApi({
         url: `https://app.sportdataapi.com/api/v1/soccer/matches/${id}?apikey=${process.env.REACT_APP_SPORT_API_KEY}`,
       }),
     }),
+    getRefereeById: builder.query({
+      query: ({ id }) => ({
+        url: `https://app.sportdataapi.com/api/v1/soccer/referees/${id}?apikey=${process.env.REACT_APP_SPORT_API_KEY}`,
+      }),
+    }),
   }),
 });
 
@@ -43,4 +48,5 @@ export const {
   useGetFinishedMatchesQuery,
   useGetMatchesByDateQuery,
   useGetMatchByIdQuery,
+  useGetRefereeByIdQuery,
 } = requestFootballAPI;

@@ -25,7 +25,11 @@ const Fixture = () => {
         })
         .map((fixture) => {
           return <InfoCard data={fixture} key={fixture?.match_id} />;
-        })}
+        }) || (
+        <span className="text-white text-lg inline-block mx-auto p-4">
+          No record found
+        </span>
+      )}
     </section>
   );
 };
