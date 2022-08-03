@@ -19,15 +19,13 @@ const Info = () => {
   return (
     <section className="w-5/6 bg-[#181818] mx-auto my-4 rounded-md border border-gray-500 h-min">
       <div className="w-[100%] border-b border-b-gray-500 text-white min-h-[3rem] p-3">
-        <span className="text-xl">
-          📅 Date : {dayjs(match?.data?.match_start).format("lll")}
-        </span>
+        <span>📅 Date : {dayjs(match?.data?.match_start).format("lll")}</span>
       </div>
       <div className="w-[100%] border-b border-b-gray-500 text-white min-h-[3rem] p-3">
-        <span className="text-xl">🏁 Referee : {referee?.data?.name}</span>
+        <span>🏁 Referee : {referee?.data?.name}</span>
       </div>
       <div className="w-[100%] text-white min-h-[3rem] p-3">
-        <span className="text-xl">
+        <span>
           📍 Stadium : {match?.data?.venue?.name} &middot;{" "}
           {match?.data?.venue?.city}
         </span>

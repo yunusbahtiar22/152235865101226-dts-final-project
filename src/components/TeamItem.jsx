@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 dayjs.extend(localizeFormat);
 
-const InfoCard = ({ data }) => {
+const TeamItem = ({ data }) => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/details/${data?.match_id}`);
@@ -16,7 +16,7 @@ const InfoCard = ({ data }) => {
       className="flex bg-[rgba(225,225,225,0.05)] h-min-[70px] mt-3 w-[99%] mx-auto rounded-md cursor-pointer"
       onClick={handleClick}>
       <div className="w-1/6 text-white p-2 flex justify-center items-center">
-        <span className="font-semibold">
+        <span className="text-sm font-semibold">
           {data?.status_code === 0 && "Not Started"}
           {data?.status_code === 1 && "Playing"}
           {data?.status_code === 11 && "HT"}
@@ -37,7 +37,7 @@ const InfoCard = ({ data }) => {
             src={data?.home_team?.logo}
             alt={data?.home_team?.name}
           />
-          <span className="font-semibold ml-3 text-white text-xl">
+          <span className="font-semibold ml-3 text-white">
             {data?.home_team?.name}
           </span>
         </div>
@@ -49,7 +49,7 @@ const InfoCard = ({ data }) => {
             src={data?.away_team?.logo}
             alt={data?.away_team?.name}
           />
-          <span className="font-semibold ml-3 text-white text-xl">
+          <span className="font-semibold ml-3 text-white">
             {data?.away_team?.name}
           </span>
         </div>
@@ -71,4 +71,4 @@ const InfoCard = ({ data }) => {
   );
 };
 
-export default InfoCard;
+export default TeamItem;

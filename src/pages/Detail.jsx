@@ -2,6 +2,7 @@ import React from "react";
 import { useGetMatchByIdQuery } from "../services/requestFootballAPI";
 import { Outlet, useParams, NavLink } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 dayjs.extend(localizedFormat);
@@ -19,13 +20,13 @@ const Detail = () => {
       <header>
         <Navbar />
       </header>
-      <main className="w-3/6 mx-auto border border-gray-500 mt-4 rounded-md">
+      <main className="w-3/6 mx-auto border border-gray-500 mt-4 mb-6 rounded-md h-screen">
         <div className="text-white text-center">
-          <span className="text-lg mx-4">{match?.data?.group?.group_name}</span>
+          <span className="text-sm mx-4">{match?.data?.group?.group_name}</span>
           &middot;
-          <span className="text-lg mx-4">{match?.data?.stage?.name}</span>
+          <span className="text-sm mx-4">{match?.data?.stage?.name}</span>
           &middot;
-          <span className="text-lg mx-4">Round {match?.data?.round?.name}</span>
+          <span className="text-sm mx-4">Round {match?.data?.round?.name}</span>
         </div>
         <div className="w-[100%] border-b border-b-gray-500 p-3">
           <div className="flex justify-around items-center w-5/6 rounded-md mx-auto bg-[rgba(225,225,225,0.05)] p-3">
@@ -35,9 +36,9 @@ const Detail = () => {
                 alt={match?.data?.home_team?.name}
               />
               <figcaption>
-                <h3 className="text-2xl font-bold text-white">
+                <h4 className="font-bold text-white">
                   {match?.data?.home_team?.name}
-                </h3>
+                </h4>
               </figcaption>
             </figure>
             <div className="text-center">
@@ -66,9 +67,9 @@ const Detail = () => {
                 alt={match?.data?.away_team?.name}
               />
               <figcaption>
-                <h3 className="text-2xl font-bold text-white">
+                <h4 className="font-bold text-white">
                   {match?.data?.away_team?.name}
-                </h3>
+                </h4>
               </figcaption>
             </figure>
           </div>
@@ -76,28 +77,23 @@ const Detail = () => {
             <NavLink
               to="info"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}>
-              <span className="text-white font-semibold text-lg mx-2">
-                Info
-              </span>
+              <span className="text-white font-semibold mx-2">Info</span>
             </NavLink>
             <NavLink
               to="summary"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}>
-              <span className="text-white font-semibold text-lg mx-2">
-                Summary
-              </span>
+              <span className="text-white font-semibold mx-2">Summary</span>
             </NavLink>
             <NavLink
               to="statistics"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}>
-              <span className="text-white font-semibold text-lg mx-2">
-                Statistics
-              </span>
+              <span className="text-white font-semibold mx-2">Statistics</span>
             </NavLink>
           </div>
         </div>
         <Outlet />
       </main>
+      <Footer />
     </>
   );
 };

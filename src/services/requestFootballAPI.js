@@ -40,6 +40,16 @@ export const requestFootballAPI = createApi({
         url: `https://app.sportdataapi.com/api/v1/soccer/referees/${id}?apikey=${process.env.REACT_APP_SPORT_API_KEY}`,
       }),
     }),
+    getTeamById: builder.query({
+      query: ({ id }) => ({
+        url: `https://app.sportdataapi.com/api/v1/soccer/teams/${id}?apikey=${process.env.REACT_APP_SPORT_API_KEY}`,
+      }),
+    }),
+    getStandings: builder.query({
+      query: () => ({
+        url: `https://app.sportdataapi.com/api/v1/soccer/standings?apikey=${process.env.REACT_APP_SPORT_API_KEY}&season_id=3009`,
+      }),
+    }),
   }),
 });
 
@@ -49,4 +59,6 @@ export const {
   useGetMatchesByDateQuery,
   useGetMatchByIdQuery,
   useGetRefereeByIdQuery,
+  useGetTeamByIdQuery,
+  useGetStandingsQuery,
 } = requestFootballAPI;

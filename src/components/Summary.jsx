@@ -18,7 +18,7 @@ const Summary = () => {
                   ? "left"
                   : "right"
               }`}>
-              <span className="text-lg">
+              <span>
                 {`${event?.minute + event?.extra_minute}' `}
                 {event.player_name}
                 {" 🩹 "}
@@ -35,7 +35,7 @@ const Summary = () => {
                   ? "left"
                   : "right"
               }`}>
-              <span className="text-lg">
+              <span>
                 {`${event?.minute + event?.extra_minute}' `}
                 {event?.player_name}
                 {" 🟨 "}
@@ -52,7 +52,7 @@ const Summary = () => {
                   ? "left"
                   : "right"
               }`}>
-              <span className="text-lg">
+              <span>
                 {`${event?.minute + event?.extra_minute}' `}
                 {event?.player_name}
                 {" 🟥 "}
@@ -69,7 +69,7 @@ const Summary = () => {
                   ? "left"
                   : "right"
               }`}>
-              <span className="text-lg">
+              <span>
                 {`${event?.minute + event?.extra_minute}' `}
                 {event?.player_name}
                 {" ⚽ "}
@@ -86,7 +86,7 @@ const Summary = () => {
                   ? "left"
                   : "right"
               }`}>
-              <span className="text-lg">
+              <span>
                 {`${event?.minute + event?.extra_minute}' `}
                 {event?.player_name}
                 {" 🔄 "}
@@ -104,7 +104,7 @@ const Summary = () => {
                   ? "left"
                   : "right"
               }`}>
-              <span className="text-lg">
+              <span>
                 {`${event?.minute + event?.extra_minute}' `}
                 {event?.player_name}
                 {" 🤕 "}
@@ -114,10 +114,10 @@ const Summary = () => {
           );
         }
       }) || (
-        <span className="text-white text-lg inline-block mx-auto p-4">
+        <p className="text-white p-4">
           No data to show ! either because the game has not started yet or there
           was no description available
-        </span>
+        </p>
       )}
     </section>
   );

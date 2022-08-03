@@ -21,7 +21,7 @@ const ResetPassword = () => {
       <main className="flex h-screen bg-[#181818]">
         <div className="w-2/6 m-auto p-5 bg-[rgba(225,225,225,0.05)] border border-gray-500 rounded-md">
           <p
-            className="text-white text-3xl font-bold text-center cursor-pointer"
+            className="text-white text-xl font-bold text-center cursor-pointer"
             onClick={() => {
               navigate("/");
             }}>
@@ -30,23 +30,21 @@ const ResetPassword = () => {
           <form
             className="w-4/6 m-auto rounded-md p-3 bg-transparent"
             onSubmit={handleSubmit}>
-            <p className="text-white text-xl text-center my-3 ">
+            <p className="text-white text-center my-3 ">
               Enter your email below
             </p>
-            <label
-              htmlFor="email"
-              className="inline-block text-white text-xl mt-1">
+            <label htmlFor="email" className="inline-block text-white mt-1">
               Email
             </label>
             <input
               id="email"
               name="email"
               placeholder="Email"
-              className="inline-block w-full leading-8 p-2 outline-none focus:ring-4 focus:ring-orange-500 rounded-sm"
+              className="inline-block w-full leading-3 p-2 outline-none focus:ring-4 focus:ring-orange-500 rounded-sm"
               type="text"
               autoComplete="email"
             />
-            <button className="w-full rounded-md my-4 p-2 text-white bg-orange-500 font-semibold text-2xl">
+            <button className="w-full rounded-md my-2 p-2 text-white bg-orange-500 font-semibold">
               Reset Password
             </button>
           </form>

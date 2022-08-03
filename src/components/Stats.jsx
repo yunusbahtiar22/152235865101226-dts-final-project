@@ -41,23 +41,17 @@ const Stats = () => {
                 className={`flex justify-between items-center w-[100%] ${
                   index === tableData.length - 1 ? "" : "border-b"
                 } border-b-gray-500 text-white min-h-[3rem] p-3`}>
-                <span className="font-semibold text-lg">
-                  {match?.data?.match_statistics[0][key]}
-                </span>
-                <span className="font-semibold text-lg">
-                  {tableData[index]}
-                </span>
-                <span className="font-semibold text-lg">
-                  {match?.data?.match_statistics[1][key]}
-                </span>
+                <span>{match?.data?.match_statistics[0][key]}</span>
+                <span>{tableData[index]}</span>
+                <span>{match?.data?.match_statistics[1][key]}</span>
               </div>
             );
           })
       ) : (
-        <span className="text-white text-lg inline-block mx-auto p-4">
+        <p className="text-white p-4">
           No data to show ! either because the game has not started yet or there
           was no description available
-        </span>
+        </p>
       )}
     </section>
   );

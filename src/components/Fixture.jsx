@@ -1,20 +1,17 @@
 import React from "react";
 import { useGetIncomingMatchesQuery } from "../services/requestFootballAPI";
-import InfoCard from "../components/InfoCard";
+import TeamItem from "./TeamItem";
 import { selectTxtFilter } from "../reducers/soccerDataSlice";
 import { useSelector } from "react-redux";
 
 const Fixture = () => {
   const txtFilter = useSelector(selectTxtFilter);
   const { data: fixtures, isLoading, isError } = useGetIncomingMatchesQuery();
-
   return (
     <section className="w-3/6 bg-[#181818] mx-auto my-4 rounded-md border border-gray-500 h-min">
-      <h3 className="text-white font-bold ml-2 text-xl p-2">Fixtures</h3>
+      <h4 className="text-white font-bold ml-2 p-2">Fixtures</h4>
       {isLoading && (
-        <span className="text-white text-lg inline-block mx-auto p-4">
-          Loading...
-        </span>
+        <p className="text-white text-xl text-center p-4">Loading...</p>
       )}
       {fixtures?.data
         ?.filter((fixture) => {
@@ -29,12 +26,10 @@ const Fixture = () => {
           );
         })
         .map((fixture) => {
-          return <InfoCard data={fixture} key={fixture?.match_id} />;
+          return <TeamItem data={fixture} key={fixture?.match_id} />;
         })}
       {isError && (
-        <span className="text-white text-lg inline-block mx-auto p-4">
-          No record found
-        </span>
+        <p className="text-white text-xl text-center p-4">No record found</p>
       )}
     </section>
   );

@@ -22,57 +22,53 @@ const Login = () => {
       <main className="flex h-screen bg-[#181818]">
         <div className="w-2/6 m-auto p-5 bg-[rgba(225,225,225,0.05)] border border-gray-500 rounded-md">
           <p
-            className="text-white text-3xl font-bold text-center cursor-pointer"
+            className="text-white text-xl font-bold text-center cursor-pointer"
             onClick={() => {
               navigate("/");
             }}>
             ⚽ Score Master ⚽
           </p>
           <form
-            className="w-4/6 m-auto rounded-md p-3 bg-transparent"
+            className="w-4/6 m-auto rounded-md p-1 bg-transparent"
             onSubmit={handleSubmit}>
-            <label
-              htmlFor="email"
-              className="inline-block text-white text-xl mt-4">
+            <label htmlFor="email" className="inline-block text-white mt-2">
               Email
             </label>
             <input
               id="email"
               name="email"
               placeholder="Email"
-              className="inline-block w-full leading-8 p-2 outline-none focus:ring-4 focus:ring-orange-500 rounded-sm"
+              className="inline-block w-full leading-3 p-2 outline-none focus:ring-4 focus:ring-orange-500 rounded-sm"
               type="text"
               autoComplete="email"
             />
-            <label
-              htmlFor="password"
-              className="inline-block text-white text-xl mt-4">
+            <label htmlFor="password" className="inline-block text-white mt-2">
               Password
             </label>
             <input
               id="password"
               name="password"
               placeholder="Password"
-              className="inline-block w-full leading-8 p-2 outline-none focus:ring-4 focus:ring-orange-500 rounded-sm"
+              className="inline-block w-full leading-3 p-2 outline-none focus:ring-4 focus:ring-orange-500 rounded-sm"
               type="password"
               autoComplete="current-password"
             />
-            {error && <span className="text-red-500 text-lg">{error}</span>}
+            {error && <span className="text-red-500">{error}</span>}
             <input
               id="remember-me"
               name="remember-me"
               type="checkbox"
-              className="h-5 w-5 mt-4"
+              className="h-3 w-3 mt-2"
             />
             <label htmlFor="remember-me">
-              <span className="text-gray-200 ml-2 p-1">Remeber me</span>
+              <span className="text-gray-200 ml-2 p-1 text-xs">Remeber me</span>
             </label>
-            <button className="w-full rounded-md my-4 p-2 text-white bg-orange-500 font-semibold text-2xl">
+            <button className="w-full rounded-md my-2 p-1 text-white bg-orange-500 font-semibold">
               Sign In
             </button>
             <p className="text-center text-white mx-auto">or Sign In with</p>
             <button
-              className="w-full rounded-md my-4 p-2 text-white bg-gray-500 font-semibold text-2xl"
+              className="w-full rounded-md my-2 p-1 text-white bg-gray-500"
               onClick={logInWithGoogle}>
               <div className="w-min mx-auto">
                 <svg
@@ -80,8 +76,8 @@ const Login = () => {
                   aria-hidden="true"
                   role="img"
                   class="iconify iconify--logos"
-                  width="80"
-                  height="32"
+                  width="64"
+                  height="22"
                   preserveAspectRatio="xMidYMid meet"
                   viewBox="0 0 512 168">
                   <path
@@ -108,7 +104,7 @@ const Login = () => {
             <Link to="/reset-password">
               <span className="underline text-white">Forgot password ?</span>
             </Link>
-            <p className="text-white text-lg my-2">
+            <p className="text-white my-2">
               Don't have an account ?{" "}
               <Link to="/register">
                 <span className="underline">Sign Up!</span>
