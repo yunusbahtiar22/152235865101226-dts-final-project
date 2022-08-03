@@ -14,15 +14,33 @@ const Standings = () => {
           <table className="w-[99%] table-auto text-white mx-auto my-4">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Team</th>
-                <th>P</th>
-                <th>W</th>
-                <th>D</th>
-                <th>L</th>
-                <th>F</th>
-                <th>A</th>
-                <th>GD</th>
+                <th className="cursor-pointer" title="Position">
+                  #
+                </th>
+                <th className="cursor-pointer" title="Team">
+                  Team
+                </th>
+                <th className="cursor-pointer" title="Games played">
+                  P
+                </th>
+                <th className="cursor-pointer" title="Win">
+                  W
+                </th>
+                <th className="cursor-pointer" title="Draw">
+                  D
+                </th>
+                <th className="cursor-pointer" title="Lost">
+                  L
+                </th>
+                <th className="cursor-pointer" title="Goals scored">
+                  F
+                </th>
+                <th className="cursor-pointer" title="Goals against">
+                  A
+                </th>
+                <th className="cursor-pointer" title="Goals different">
+                  GD
+                </th>
               </tr>
             </thead>
             <tbody>
