@@ -20,7 +20,7 @@ const Detail = () => {
       <header>
         <Navbar />
       </header>
-      <main className="w-3/6 mx-auto border border-gray-500 mt-4 mb-6 rounded-md h-screen">
+      <main className="w-3/6 mx-auto border border-gray-500 mt-4 mb-6 rounded-md min-h-screen">
         <div className="text-white text-center">
           <span className="text-sm mx-4">{match?.data?.group?.group_name}</span>
           &middot;

@@ -99,7 +99,7 @@ const Summary = () => {
         if (event.type === "injury") {
           return (
             <div
-              className={`w-[100%] border-b border-b-gray-500 text-white min-h-[3rem] p-3 text-${
+              className={`w-[100%] border-b border-b-gray-500 text-white p-3 text-${
                 event.team_id === match?.data?.home_team?.team_id
                   ? "left"
                   : "right"
