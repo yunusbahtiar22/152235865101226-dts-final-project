@@ -1,7 +1,7 @@
 import React from "react";
 import dayjs from "dayjs";
 import localizeFormat from "dayjs/plugin/localizedFormat";
-import { FaStar } from "react-icons/fa";
+// import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 dayjs.extend(localizeFormat);
@@ -54,7 +54,7 @@ const InfoCard = ({ data }) => {
           </span>
         </div>
       </div>
-      <div className="w-1/6 p-1 text-white">
+      <div className="w-1/6 p-1 text-white mr-5">
         <div className="py-2 text-right">
           <span className="font-bold text-lg">{data?.stats?.home_score}</span>
         </div>
@@ -62,11 +62,11 @@ const InfoCard = ({ data }) => {
           <span className="font-bold text-lg">{data?.stats?.away_score}</span>
         </div>
       </div>
-      <div className="w-1/6 p-1 flex justify-center items-center">
+      {/* <div className="w-min p-1 flex justify-center items-center">
         <button className="font-bold text-3xl hover:text-orange-500">
           <FaStar />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

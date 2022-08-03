@@ -20,7 +20,13 @@ const Detail = () => {
         <Navbar />
       </header>
       <main className="w-3/6 mx-auto border border-gray-500 mt-4 rounded-md">
-        <h3 className="text-white text-lg ml-[67px] mb-2">League here</h3>
+        <div className="text-white text-center">
+          <span className="text-lg mx-4">{match?.data?.group?.group_name}</span>
+          &middot;
+          <span className="text-lg mx-4">{match?.data?.stage?.name}</span>
+          &middot;
+          <span className="text-lg mx-4">Round {match?.data?.round?.name}</span>
+        </div>
         <div className="w-[100%] border-b border-b-gray-500 p-3">
           <div className="flex justify-around items-center w-5/6 rounded-md mx-auto bg-[rgba(225,225,225,0.05)] p-3">
             <figure className="flex flex-col justify-center items-center">

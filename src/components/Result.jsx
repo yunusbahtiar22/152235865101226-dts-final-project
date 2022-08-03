@@ -5,10 +5,15 @@ import { selectTxtFilter } from "../reducers/soccerDataSlice";
 
 const Fixture = () => {
   const txtFilter = useSelector(selectTxtFilter);
-  const { data: results } = useGetFinishedMatchesQuery();
+  const { data: results, isLoading, isError } = useGetFinishedMatchesQuery();
   return (
     <section className="w-3/6 bg-[#181818] mx-auto my-4 rounded-md border border-gray-500 h-min">
       <h3 className="text-white font-bold ml-2 text-xl p-2">Results</h3>
+      {isLoading && (
+        <span className="text-white text-lg inline-block mx-auto p-4">
+          Loading...
+        </span>
+      )}
       {results?.data
         .filter(
           (result) =>
@@ -29,7 +34,8 @@ const Fixture = () => {
         })
         .map((result) => {
           return <InfoCard data={result} key={result?.match_id} />;
-        }) || (
+        })}
+      {isError && (
         <span className="text-white text-lg inline-block mx-auto p-4">
           No record found
         </span>
