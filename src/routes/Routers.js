@@ -14,6 +14,7 @@ import { auth } from "../app/firebase";
 import { Navigate } from "react-router-dom";
 import ResetPassword from "../pages/ResetPassword";
 import Standings from "../components/Standings";
+import NewsPage from "../pages/NewsPage";
 
 const Protected = ({ children }) => {
   const [user, loading] = useAuthState(auth);
@@ -35,8 +36,7 @@ const Routers = () => {
           <Route path="result" element={<Result />} />
           <Route path="standings" element={<Standings />} />
         </Route>
-        <Route path="/news" element={<Home />} />
-        <Route path="/favorite" element={<Home />} />
+        <Route path="/news" element={<NewsPage />} />
         <Route
           path="/login"
           element={

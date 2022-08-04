@@ -1,10 +1,11 @@
 import React from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, logOut } from "../app/firebase";
 import { FaSignOutAlt } from "react-icons/fa";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const activeStyle = {
     background: "#f97316",
     borderRadius: "50px",
@@ -14,7 +15,9 @@ const Navbar = () => {
   return (
     <div className="bg-[#141414] p-3">
       <div className="flex justify-between w-[90%] m-auto text-orange-500">
-        <span className="font-bold text-xl p-2">⚽ Score Master ⚽</span>
+        <span className="font-bold text-xl p-2" onClick={() => navigate("/")}>
+          ⚽ Score Master ⚽
+        </span>
         <div className="flex text-white justify-around items-center gap-10">
           <NavLink
             to="/"
