@@ -8,7 +8,6 @@ import { Outlet, NavLink, useLocation } from "react-router-dom";
 const Home = () => {
   const dispatch = useDispatch();
   const location = useLocation();
-  console.log(location.pathname);
   const handleSearch = (e) => {
     dispatch(search(e.target.value));
   };

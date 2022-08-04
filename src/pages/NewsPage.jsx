@@ -10,7 +10,6 @@ const NewsPage = () => {
     isLoading,
     isError,
   } = useGetLatestNewsQuery({ page: 1 });
-  console.log(newsData);
   // let news = [...newsData.results];
   // const handleClick = () => {
   //   if (page <= 10) {
