@@ -82,7 +82,9 @@ const Detail = () => {
             <NavLink
               to="summary"
               style={({ isActive }) => (isActive ? activeStyle : undefined)}>
-              <span className="text-white font-semibold mx-2">Summary</span>
+              <span className="text-white font-semibold mx-2">
+                Match Events
+              </span>
             </NavLink>
             <NavLink
               to="statistics"
